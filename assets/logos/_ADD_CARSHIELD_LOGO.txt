@@ -1,0 +1,12 @@
+CARSHIELD LOGO — required for the 3 brand lockups (cover, header, closing)
+==========================================================================
+Drop a CLEAN, TRANSPARENT PNG here with this EXACT name:
+
+    carshield.png   (white/knockout version preferred — sits on dark panels)
+
+The deck already points at it. Until it's added, the lockups fall back to a
+styled "CarShield" text mark automatically (no breakage). No code change
+needed once you add the file — just hard-refresh.
+
+Use the original transparent brand asset. Do NOT cut it out of a photo/mockup
+(causes white fringing).
