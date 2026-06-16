@@ -799,6 +799,11 @@ html, body {
     object-fit: cover;
     transition: transform 8s ease-out;
 }
+/* Slide 5 — show the whole cage image (more CarShield logos visible) */
+.content-visual.cage-fit img {
+    object-fit: contain;
+    background: #06091a;
+}
 /* === Slide 12 — Watch & Bet (live stream playing in the LS player) === */
 .content-visual.watch-bet-visual {
     background: #06091a;
@@ -873,6 +878,7 @@ html, body {
     object-fit: cover;
     object-position: center;
     border-radius: 12px;
+    border: 2px solid rgba(0,160,220,0.55);
     display: block;
     box-shadow: 0 14px 38px rgba(0,0,0,0.34);
 }
@@ -961,7 +967,7 @@ html, body {
 .wb-video-cell { margin: 0; }
 .wb-video-cell video {
     width: 100%;
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 16 / 9;
     max-height: 72vh;
     background: #000;
     border-radius: 12px;
