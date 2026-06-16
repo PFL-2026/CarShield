@@ -841,20 +841,72 @@ html, body {
     pointer-events: none;
 }
 
-/* Two LED images fill the panel side by side (replaces interface screenshot) */
-.wb-frame--led {
+/* Slide 12 — two proportioned LED images, captions, and a pulsing CTA */
+.watch-bet-visual { position: relative; }
+.wb-led-wrap {
+    position: absolute;
+    inset: 0;
     display: flex;
-    gap: 6px;
+    flex-direction: column;
+    padding: 30px;
+    gap: 18px;
+    box-sizing: border-box;
 }
-.wb-frame--led .wb-led-img {
+.wb-led-row {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    gap: 14px;
+}
+.wb-led-item {
     flex: 1 1 0;
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    user-select: none;
-    pointer-events: none;
+    min-width: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
 }
+.wb-led-item img {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 14px 38px rgba(0,0,0,0.34);
+}
+.wb-led-item figcaption {
+    flex-shrink: 0;
+    text-align: center;
+    font-family: var(--font-cond, var(--font-display));
+    font-size: 12.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.74);
+}
+.wb-led-cta {
+    flex-shrink: 0;
+    align-self: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    padding: 14px 30px;
+    background: #00a0dc;
+    border-radius: 999px;
+    box-shadow: 0 12px 32px rgba(0,160,220,0.45), 0 0 0 0 rgba(0,160,220,0.55);
+    animation: watchCtaPulse 2.2s ease-in-out infinite;
+    transition: transform 200ms ease, background 200ms ease;
+}
+.wb-led-cta:hover { transform: scale(1.05); background: #19b0e8; }
+.wb-led-cta svg { flex-shrink: 0; }
 
 /* Player video — a prominent featured stream window. Hidden until the user
    clicks the play trigger, then it animates open (scale+fade) and plays. */
@@ -1951,6 +2003,28 @@ html, body {
 }
 .bcast-partner > img.bcast-logo-lg {
     padding: 4px 8px;
+}
+/* Single prominent ESPN broadcast box (US-only) */
+.broadcast-on-logos:has(.bcast-espn-box) {
+    grid-template-columns: 1fr;
+}
+.bcast-espn-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 132px;
+    padding: 22px 28px;
+    background: #ffffff;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+}
+.bcast-espn-logo {
+    width: auto;
+    max-width: 78%;
+    max-height: 72px;
+    object-fit: contain;
+    display: block;
 }
 .social-visual {
     position: relative;
@@ -3982,6 +4056,32 @@ body.terms-modal-open { overflow: hidden; }
     border: 1px solid rgba(0, 160, 220,0.6);
     border-radius: 4px;
     white-space: nowrap;
+}
+/* Prominent, on-brand pulsing blue "Watch Video Demo" CTA (replaces play circle) */
+.video-embed-label.cutin-watch-cta {
+    bottom: 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 15px;
+    letter-spacing: 0.16em;
+    color: #fff;
+    padding: 15px 28px;
+    background: #00a0dc;
+    border: 0;
+    border-radius: 999px;
+    box-shadow: 0 12px 34px rgba(0,160,220,0.45), 0 0 0 0 rgba(0,160,220,0.55);
+    animation: watchCtaPulse 2.2s ease-in-out infinite;
+    transition: transform 200ms ease, background 200ms ease;
+}
+.video-embed-label.cutin-watch-cta svg { flex-shrink: 0; }
+.video-embed-trigger:hover .cutin-watch-cta {
+    transform: translateX(-50%) scale(1.05);
+    background: #19b0e8;
+}
+@keyframes watchCtaPulse {
+    0%, 100% { box-shadow: 0 12px 34px rgba(0,160,220,0.45), 0 0 0 0 rgba(0,160,220,0.5); }
+    50% { box-shadow: 0 12px 34px rgba(0,160,220,0.45), 0 0 0 16px rgba(0,160,220,0); }
 }
 
 /* Video lightbox */
