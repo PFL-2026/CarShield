@@ -1195,8 +1195,9 @@ html, body {
     width: auto;
     height: auto;
     object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 14px 38px rgba(0,0,0,0.4);
+    border-radius: 10px;
+    border: 2px solid rgba(0,160,220,0.55);
+    box-shadow: 0 14px 38px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06);
     display: block;
 }
 /* Flat CarShield social-series composite (replaces the built HTML IG feed) */

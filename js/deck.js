@@ -456,7 +456,7 @@
         desc: 'Episodic, story-led content following fighters through camp, fight week and beyond — a recurring series that keeps CarShield front and centre between events.',
         series: [
           {
-            label: 'Between The Rounds',
+            label: 'Between Rounds',
             embed: 'https://www.youtube.com/embed/Z56rQeSApBY',
             archive: 'https://www.youtube.com/playlist?list=PL2PVbMNCCWz6W0zBXMa_6jsfIXJFt6iXg',
             desc: 'Long-form sit-downs with the biggest personalities in the PFL, hosted by Dan Hardy — fighters, coaches, execs, on life, legacy and the stories behind the fights.'
