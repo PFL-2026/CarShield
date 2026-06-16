@@ -622,3 +622,21 @@
   updateUI();
   if (eventsTrack) updateEventUI();
 })();
+
+/* LED wristband video popup (slide 12 — "View in Action") */
+(function () {
+  const modal = document.getElementById('wristbandModal');
+  if (!modal) return;
+  const vids = modal.querySelectorAll('video');
+  const open = () => { modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); };
+  const close = () => {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    vids.forEach(v => { try { v.pause(); } catch (e) {} });
+  };
+  document.querySelectorAll('[data-open-wb-modal]').forEach(b => b.addEventListener('click', open));
+  modal.querySelectorAll('[data-close-wb]').forEach(b => b.addEventListener('click', close));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+  });
+})();

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=20260616-carshield2">
+<link rel="stylesheet" href="css/styles.css?v=20260616-carshield4">
 </head>
 <body>
 
@@ -30,7 +30,6 @@
 <button class="section-btn" data-section="4" data-target="11">Content</button>
 <button class="section-btn" data-section="5" data-target="14">Hospitality</button>
 <button class="section-btn" data-section="7" data-target="15">Close</button>
-<button class="section-btn section-btn-terms" type="button" data-open-terms-modal>Terms Sheet</button>
   </nav>
   <div class="slide-counter"><span class="cur" id="curSlide">01</span> / 15</div>
 </header>
@@ -150,7 +149,7 @@
     <h2 class="slide-title">Broadcast<br><span class="accent">Integrations</span></h2>
     <div class="slide-body">Co-branded CarShield placements run live on the ESPN US broadcast — banner overlays, sponsor graphics and on-screen promos.</div>
     <div class="social-stats" style="margin-top: 32px;">
-      <div class="stat-card"><div class="num">6+</div><div class="label">Fight Cards</div></div>
+      <div class="stat-card"><div class="num">6</div><div class="label">Fight Cards in 2026</div></div>
       <div class="stat-card"><div class="num">250k</div><div class="label">Average Unique Viewers</div></div>
       <div class="stat-card"><div class="num">US</div><div class="label">Territory Only</div></div>
     </div>
@@ -183,6 +182,8 @@
         <div class="bcast-live-pip">
           <span class="bcast-live-dot"></span>LIVE
         </div>
+        <!-- CarShield broadcast watermark, top-right -->
+        <img class="bcast-watermark" src="assets/logos/carshield-white.png" alt="CarShield" aria-hidden="true">
         <!-- Subtle scanline + screen shine for "TV" feel -->
         <div class="bcast-scanlines" aria-hidden="true"></div>
         <div class="bcast-shine" aria-hidden="true"></div>
@@ -299,7 +300,10 @@
 
 <section class="slide content-slide flip" data-slide="9">
   <div class="content-visual ig-feed-visual">
-    <img src="assets/images/Olybet_social_series.jpg" alt="PFL × CarShield — branded social series" class="ig-series-img">
+    <div class="ig-series-pair">
+      <img src="assets/images/carshield_insta_1.jpg" alt="CarShield × PFL — By the Numbers, Shabily">
+      <img src="assets/images/carshield_insta_2.jpg" alt="CarShield × PFL — By the Numbers, McKee vs Isbulaev">
+    </div>
   </div>
   <div class="content-text">
     <div class="eyebrow">User Acquisition</div>
@@ -315,7 +319,7 @@
   <div class="content-text">
     <div class="eyebrow">User Acquisition</div>
     <h2 class="slide-title">Data-Driven<br>Virtual <span class="accent">Cut-Ins</span></h2>
-    <div class="slide-body">Live odds, real-time — powered by CarShield — delivered in premium cage-side broadcast placements.</div>
+    <div class="slide-body">Live data, real-time — sponsored by CarShield — delivered in premium cage-side broadcast placements.</div>
     <a class="wsc-badge tgi-badge" href="https://tgisport.com/" target="_blank" rel="noopener noreferrer" aria-label="TGI Sport — opens in new tab">
       <span class="wsc-badge-label">Powered by</span>
       <img src="assets/logos/tgi-sport-white.png" alt="TGI Sport" class="wsc-badge-logo">
@@ -375,10 +379,10 @@
           <figcaption>On-Wrist · In-Hand</figcaption>
         </figure>
       </div>
-      <a class="wb-led-cta" href="https://app.iconik.io/share/collections/a84aec60-5a9f-11f1-a7ac-e6f88a47f38f/?object_type=collections&object_id=a84aec60-5a9f-11f1-a7ac-e6f88a47f38f&hash=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaGFyZV9pZCI6ImE4NTE0YmFhLTVhOWYtMTFmMS1hN2FjLWU2Zjg4YTQ3ZjM4ZiIsInNoYXJlX3VzZXJfaWQiOiJhODUzYjQ0ZS01YTlmLTExZjEtYTdhYy1lNmY4OGE0N2YzOGYiLCJleHAiOjE5Mzc2NTc3MTksInN5cyI6Imljb25pay1ldSJ9.ydGmIaP6Zrb9BxaHppC5THK8IGyW0Tnw8BpgfqaHjzc" target="_blank" rel="noopener noreferrer">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      <button type="button" class="wb-led-cta" data-open-wb-modal aria-label="View the LED wristband activation in action">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
         View in Action
-      </a>
+      </button>
     </div>
   </div>
   <div class="content-text">
@@ -453,246 +457,6 @@
 
 </main>
 
-<!-- Terms Sheet Modal — opens from the topbar Terms Sheet button -->
-<div class="terms-modal" id="termsModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="termsModalTitle">
-  <div class="terms-modal-backdrop" data-close-terms-modal></div>
-  <div class="terms-modal-shell">
-    <header class="terms-modal-header">
-      <div class="terms-modal-titles">
-        <div class="terms-modal-eyebrow">Heads of Terms · Confidential</div>
-        <h2 id="termsModalTitle" class="terms-modal-title">PFL <span class="ls-accent">×</span> CarShield <span class="ls-accent">Partnership</span></h2>
-      </div>
-      <div class="terms-modal-actions">
-        <button type="button" class="terms-modal-print" data-print-terms aria-label="Download as PDF">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          <span>Download PDF</span>
-        </button>
-        <button type="button" class="terms-modal-close" data-close-terms-modal aria-label="Close">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-      </div>
-    </header>
-
-    <div class="terms-modal-body" id="termsPrintRoot">
-      <!-- Print-only header (visible only when printing/saving as PDF) -->
-      <div class="terms-print-header">
-        <div class="terms-print-eyebrow">Heads of Terms · Confidential</div>
-        <h1>PFL × CarShield Partnership</h1>
-        <div class="terms-print-meta">2026–2028 · France · Spain · Lithuania</div>
-      </div>
-
-      <!-- Section: Partnership Framework -->
-      <section class="terms-section">
-        <h3 class="terms-section-title">Partnership Framework</h3>
-        <dl class="terms-grid">
-          <dt>Term</dt>
-          <dd>
-            <strong>3-year partnership (2026–2028)</strong>
-            <ul>
-              <li>Year 1: Effective date – 31 December 2026</li>
-              <li>Year 2: 1 January 2027 – 31 December 2027</li>
-              <li>Year 3: 1 January 2028 – 31 December 2028</li>
-            </ul>
-          </dd>
-
-          <dt>Franchises &amp; Events</dt>
-          <dd>
-            <strong>2026–2028: PFL Global Events</strong>
-            <ul>
-              <li>A minimum of <strong>8 events in 2026</strong></li>
-              <li>A minimum of <strong>16 events per year from 2027</strong></li>
-            </ul>
-          </dd>
-
-          <dt>Territories</dt>
-          <dd>France, Spain, Lithuania</dd>
-
-          <dt>Financial commitment</dt>
-          <dd>
-            <ul>
-              <li>2026: <strong>€175,000</strong></li>
-              <li>2027: <strong>€475,000</strong></li>
-              <li>2028: <strong>€500,000</strong></li>
-            </ul>
-          </dd>
-
-          <dt>Guaranteed territory events</dt>
-          <dd>
-            <ul>
-              <li>PFL guarantees a minimum of <strong>1 event</strong> to be hosted within the Territory in 2026, to be held in <strong>France</strong>.</li>
-              <li>From 1 January 2027 onwards, PFL guarantees a minimum of <strong>2 events per calendar year</strong> within the Territory, comprising 1 event in <strong>France</strong> and 1 event in <strong>Spain</strong>.</li>
-              <li>All guaranteed Territory Events shall be subject to the Territory Event Uplift terms set out below.</li>
-            </ul>
-          </dd>
-
-          <dt>Territory event uplift<br><span class="terms-grid-sub">2026–2028</span></dt>
-          <dd>
-            <ul>
-              <li>Applicable to any additional event hosted within the Territory during the partnership term.</li>
-              <li>CarShield to pay <strong>€50,000 per event</strong>, inclusive of all rights and deliverables outlined in Point 5 below.</li>
-              <li>Opportunity to upgrade to <strong>Presenting Partner</strong> status, subject to separate negotiation.</li>
-            </ul>
-          </dd>
-        </dl>
-      </section>
-
-      <!-- Section: Partnership Assets -->
-      <section class="terms-section">
-        <h3 class="terms-section-title">Partnership Assets</h3>
-
-        <div class="terms-asset">
-          <div class="terms-asset-num">01</div>
-          <div class="terms-asset-body">
-            <h4>Trademark Rights &amp; Official Designations</h4>
-            <ul>
-              <li>Use of PFL official marks across all marketing platforms.</li>
-              <li><strong>2026–2028:</strong> "Exclusive Betting Partner for PFL in France, Spain &amp; Lithuania" or other mutually agreed designation.</li>
-              <li>Non-exclusive designations: "Official Partner of PFL".</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="terms-asset">
-          <div class="terms-asset-num">02</div>
-          <div class="terms-asset-body">
-            <h4>Broadcast Integrations</h4>
-            <ul>
-              <li>CarShield to receive access to custom broadcast opportunities per event. Examples may include:
-                <ul>
-                  <li>CarShield watermark logo feature throughout broadcast</li>
-                  <li>Promotional billboards</li>
-                  <li>Lower-third on-screen / Fight Presenter / Tale of the Tape graphic</li>
-                  <li>Live odds integration</li>
-                </ul>
-              </li>
-              <li>Above are subject to approvals with broadcaster.</li>
-              <li>All broadcast display limited to feeds distributed solely within the Territories.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="terms-asset">
-          <div class="terms-asset-num">03</div>
-          <div class="terms-asset-body">
-            <h4>Virtual Overlay Branding</h4>
-            <ul>
-              <li>Maximum of <strong>3 out-of-territory events</strong> with virtual logo placement on 1 large canvas, 1 vertical bumper and 1 inner middle canvas position.</li>
-              <li>Any additional events beyond the initial allocation will be charged at <strong>€25,000 per event</strong>.</li>
-              <li>Events to be selected by CarShield.</li>
-              <li>All broadcast display limited to feeds distributed solely within the Territories.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="terms-asset">
-          <div class="terms-asset-num">04</div>
-          <div class="terms-asset-body">
-            <h4>Social Content Distribution</h4>
-            <ul>
-              <li>A total of <strong>3 social media posts per event</strong>.</li>
-              <li>Logo inclusion and tag of CarShield on each post.</li>
-              <li>CarShield and PFL to mutually agree upon <strong>2 custom sports betting content series per year</strong>, included within social posts allocation.</li>
-              <li><strong>Fight Week Betting Promo:</strong> opportunity to engage first-time depositors with a unique PFL betting offer.</li>
-              <li>CarShield's logo to be featured on the Sponsor and How to Bet section of <strong>PFLmma.com</strong>.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="terms-asset">
-          <div class="terms-asset-num">05</div>
-          <div class="terms-asset-body">
-            <h4>Additional Assets Included for Any Event In-Territory</h4>
-            <ul>
-              <li>1× large canvas</li>
-              <li>1× vertical bumper</li>
-              <li>1× additional Full Apron Placement on cage</li>
-              <li>A minimum of <strong>5 social posts in total</strong> from PFL handles, as outlined above.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="terms-asset">
-          <div class="terms-asset-num">06</div>
-          <div class="terms-asset-body">
-            <h4>PFL Digital &amp; Video Content</h4>
-            <ul>
-              <li>PFL will provide pre-, during-, and post-event content assets, including but not limited to:
-                <ul>
-                  <li><strong>Pre-event:</strong> press conferences, weigh-ins, face-offs, promos, fighter media-day cutdowns</li>
-                  <li><strong>During event:</strong> rapid-turn highlight cutdowns</li>
-                  <li><strong>Post-event:</strong> official photos and recap videos</li>
-                </ul>
-              </li>
-              <li>All content may be used across CarShield-owned channels, with specified rules.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="terms-asset">
-          <div class="terms-asset-num">07</div>
-          <div class="terms-asset-body">
-            <h4>Watch &amp; Bet / Data</h4>
-            <ul>
-              <li>CarShield will receive <strong>non-exclusive live event Watch &amp; Bet rights</strong> during the Term (e.g., live event stream for distribution on Brand platforms).</li>
-              <li>CarShield will receive the official <strong>PFL data feed</strong> (from PFL or its data partner), to the extent available, via Sportradar.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="terms-asset">
-          <div class="terms-asset-num">08</div>
-          <div class="terms-asset-body">
-            <h4>Athlete Ambassador Program</h4>
-            <ul>
-              <li>CarShield will receive <strong>2 fighters</strong> across the PFL roster to be CarShield ambassadors for each year.</li>
-              <li>The PFL will work in conjunction with CarShield to define the roles &amp; responsibilities for these athletes, which can include but not be limited to:
-                <ul>
-                  <li>Digital content support</li>
-                  <li>Fight kit logo inclusion</li>
-                  <li>Consumer-facing programs (appearances / autograph signings)</li>
-                  <li>Other roles and responsibilities as mutually agreed</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="terms-asset">
-          <div class="terms-asset-num">09</div>
-          <div class="terms-asset-body">
-            <h4>VIP Hospitality &amp; Access<br><span class="terms-asset-sub">(per event)</span></h4>
-            <ul>
-              <li><strong>3× VIP tickets</strong></li>
-              <li><strong>5× GA tickets</strong></li>
-              <li>Additional ideas may include:
-                <ul>
-                  <li>On-stage + meet-and-greet at weigh-ins</li>
-                  <li>Hosted backstage tour during fight night</li>
-                  <li>Invitation to press conferences, weigh-ins, face-offs</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="terms-asset">
-          <div class="terms-asset-num">10</div>
-          <div class="terms-asset-body">
-            <h4>Account Management</h4>
-            <ul>
-              <li>For each year of the partnership, the PFL will provide CarShield with an <strong>Account Director / point-of-contact</strong>, for turnkey execution of the partnership.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <footer class="terms-print-footer">
-        <div>PFL × CarShield · Heads of Terms · Confidential</div>
-        <div>2026–2028 · France · Spain · Lithuania</div>
-      </footer>
-    </div>
-  </div>
-</div>
 
 <!-- Broadcast Distribution Modal — opens from slide 4 -->
 <div class="dist-modal terms-modal" id="broadcastDistModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="broadcastDistTitle">
@@ -822,7 +586,7 @@
         <div class="dist-channel-grid">
           <div class="dist-channel">
             <div class="dist-channel-tag">Existing</div>
-            <h4>PFL US Social Channels</h4>
+            <h4>PFL Global Social Channels</h4>
             <ul>
               <li>Distribution via established PFL Instagram, TikTok, Facebook &amp; YouTube handles</li>
               <li>3+ social posts per event presented by CarShield</li>
@@ -880,6 +644,28 @@
   </div>
 </div>
 
-<script src="js/deck.js?v=20260616-carshield2"></script>
+<!-- LED Wristband video popup — opens from slide 12 "View in Action" -->
+<div class="wb-video-modal" id="wristbandModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="LED wristband activation videos">
+  <div class="wb-video-backdrop" data-close-wb></div>
+  <div class="wb-video-inner">
+    <button type="button" class="wb-video-close" data-close-wb aria-label="Close videos">&times;</button>
+    <div class="wb-video-grid">
+      <figure class="wb-video-cell">
+        <video controls playsinline preload="metadata" poster="assets/images/carshield_led_1.jpg">
+          <source src="assets/video/wristband_1.mp4" type="video/mp4">
+        </video>
+        <figcaption>In-Arena · Fan-Worn Moment</figcaption>
+      </figure>
+      <figure class="wb-video-cell">
+        <video controls playsinline preload="metadata" poster="assets/images/carshield_led_2.jpg">
+          <source src="assets/video/wristband_2.mp4" type="video/mp4">
+        </video>
+        <figcaption>On-Wrist · In-Hand</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<script src="js/deck.js?v=20260616-carshield4"></script>
 </body>
 </html>

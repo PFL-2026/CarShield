@@ -880,25 +880,28 @@ html, body {
     flex-shrink: 0;
     text-align: center;
     font-family: var(--font-cond, var(--font-display));
-    font-size: 12.5px;
-    letter-spacing: 0.16em;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.74);
+    color: #fff;
 }
 .wb-led-cta {
     flex-shrink: 0;
     align-self: center;
     display: inline-flex;
     align-items: center;
-    gap: 9px;
+    gap: 11px;
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 14px;
+    font-size: 17px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     text-decoration: none;
     color: #fff;
-    padding: 14px 30px;
+    cursor: pointer;
+    border: 0;
+    padding: 18px 40px;
     background: #00a0dc;
     border-radius: 999px;
     box-shadow: 0 12px 32px rgba(0,160,220,0.45), 0 0 0 0 rgba(0,160,220,0.55);
@@ -907,6 +910,77 @@ html, body {
 }
 .wb-led-cta:hover { transform: scale(1.05); background: #19b0e8; }
 .wb-led-cta svg { flex-shrink: 0; }
+
+/* LED wristband video popup */
+.wb-video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 260ms ease, visibility 260ms ease;
+}
+.wb-video-modal.is-open { opacity: 1; visibility: visible; }
+.wb-video-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(4,7,18,0.86);
+    backdrop-filter: blur(6px);
+}
+.wb-video-inner {
+    position: relative;
+    width: min(1180px, 92vw);
+    max-height: 88vh;
+    padding: 28px;
+    box-sizing: border-box;
+}
+.wb-video-close {
+    position: absolute;
+    top: -6px;
+    right: 2px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 180ms ease;
+}
+.wb-video-close:hover { background: rgba(255,255,255,0.22); }
+.wb-video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+.wb-video-cell { margin: 0; }
+.wb-video-cell video {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    max-height: 72vh;
+    background: #000;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 18px 46px rgba(0,0,0,0.5);
+}
+.wb-video-cell figcaption {
+    margin-top: 12px;
+    text-align: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #fff;
+}
+@media (max-width: 760px) {
+    .wb-video-grid { grid-template-columns: 1fr; }
+}
 
 /* Player video — a prominent featured stream window. Hidden until the user
    clicks the play trigger, then it animates open (scale+fade) and plays. */
@@ -1103,6 +1177,27 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+/* Two uncropped social graphics side by side, filling the panel */
+.ig-series-pair {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.ig-series-pair img {
+    max-width: 50%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 14px 38px rgba(0,0,0,0.4);
+    display: block;
 }
 /* Flat CarShield social-series composite (replaces the built HTML IG feed) */
 .ig-series-img {
@@ -2012,19 +2107,33 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 132px;
-    padding: 22px 28px;
-    background: #ffffff;
+    height: 112px;
+    padding: 20px 26px;
+    background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.14);
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
 }
 .bcast-espn-logo {
     width: auto;
-    max-width: 78%;
-    max-height: 72px;
+    max-width: 62%;
+    max-height: 56px;
     object-fit: contain;
     display: block;
+}
+/* CarShield broadcast watermark (TV bug, top-right of feed) */
+.bcast-screen img.bcast-watermark {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    width: 96px;
+    height: auto;
+    max-width: 96px;
+    object-fit: contain;
+    opacity: 0.82;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+    z-index: 3;
+    pointer-events: none;
 }
 .social-visual {
     position: relative;
@@ -4059,14 +4168,14 @@ body.terms-modal-open { overflow: hidden; }
 }
 /* Prominent, on-brand pulsing blue "Watch Video Demo" CTA (replaces play circle) */
 .video-embed-label.cutin-watch-cta {
-    bottom: 32px;
+    bottom: 34px;
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-    font-size: 15px;
+    gap: 11px;
+    font-size: 17px;
     letter-spacing: 0.16em;
     color: #fff;
-    padding: 15px 28px;
+    padding: 18px 38px;
     background: #00a0dc;
     border: 0;
     border-radius: 999px;
