@@ -917,6 +917,34 @@ html, body {
 .wb-led-cta:hover { transform: scale(1.05); background: #19b0e8; }
 .wb-led-cta svg { flex-shrink: 0; }
 
+/* Slide 11 — LED wristband activation bullets */
+.wb-acts {
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    max-width: 460px;
+}
+.wb-acts li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 14.5px;
+    line-height: 1.45;
+    color: rgba(255,255,255,0.82);
+}
+.wb-acts li svg {
+    flex-shrink: 0;
+    width: 17px;
+    height: 17px;
+    margin-top: 2px;
+    color: #00a0dc;
+    filter: drop-shadow(0 0 6px rgba(0,160,220,0.55));
+}
+.wb-acts li strong { color: #fff; font-weight: 700; }
+
 /* LED wristband video popup */
 .wb-video-modal {
     position: fixed;
