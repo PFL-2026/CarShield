@@ -640,3 +640,38 @@
     if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
   });
 })();
+
+/* === See Brand in Action modal (slide 4) === */
+(function () {
+  const modal    = document.getElementById('sbiaModal');
+  const openBtn  = document.getElementById('sbiaOpen');
+  const closeBtn = document.getElementById('sbiaClose');
+  const backdrop = document.getElementById('sbiaBackdrop');
+  const videos   = modal ? Array.from(modal.querySelectorAll('video')) : [];
+
+  if (!modal || !openBtn) return;
+
+  function openModal() {
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    videos.forEach(v => { v.pause(); v.currentTime = 0; });
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      e.stopImmediatePropagation();
+      closeModal();
+    }
+  }, true); // capture phase — fires before deck arrow-key handler
+})();
