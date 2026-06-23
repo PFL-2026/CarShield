@@ -166,10 +166,6 @@
       <span class="dist-trigger-label">View broadcast detail</span>
       <span class="dist-trigger-arrow" aria-hidden="true">→</span>
     </button>
-    <button type="button" class="sbia-btn" id="sbiaOpen" aria-haspopup="dialog">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-      See Brand in Action
-    </button>
   </div>
   <div class="content-visual broadcast-tv-visual">
     <div class="bcast-tv">
@@ -177,6 +173,10 @@
         <video class="bcast-video" autoplay muted loop playsinline preload="auto">
           <source src="assets/video/broadcast_loop.mp4" type="video/mp4">
         </video>
+        <button type="button" class="sbia-btn sbia-btn-overlay" id="sbiaOpen" aria-haspopup="dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          See Brand in Action
+        </button>
         <!-- Sponsor bug — broadcast-style "Powered by CarShield" graphic -->
         <div class="bcast-sponsor-bug">
           <span class="bcast-bug-eyebrow">Sponsored Broadcast</span>
@@ -693,10 +693,6 @@
   <div class="wb-video-backdrop" id="sbiaBackdrop"></div>
   <div class="wb-video-inner sbia-inner">
     <button class="wb-video-close" id="sbiaClose" aria-label="Close">×</button>
-    <div class="sbia-header">
-      <div class="eyebrow" style="justify-content:center;margin-bottom:18px;">PFL × CarShield</div>
-      <h2 class="sbia-title">See Brand <span class="accent">in Action</span></h2>
-    </div>
     <div class="wb-video-grid sbia-grid">
       <figure class="wb-video-cell">
         <video id="sbiaTape" class="sbia-video" src="assets/video/tale_of_the_tape.mp4" controls controlsList="nodownload" playsinline preload="metadata"></video>
