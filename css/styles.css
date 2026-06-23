@@ -1041,18 +1041,39 @@ html, body {
 .sbia-btn:hover { transform: scale(1.05); background: #19b0e8; }
 .sbia-btn svg { flex-shrink: 0; }
 
+/* See Brand in Action — centered over the broadcast video */
+.sbia-btn-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 0;
+    align-self: auto;
+    z-index: 4;
+    white-space: nowrap;
+}
+.sbia-btn-overlay:hover { transform: translate(-50%, -50%) scale(1.05); }
+
 /* === SBIA modal overrides (header + larger videos) === */
 .sbia-inner {
-    width: min(1300px, 94vw);
+    width: min(1440px, 95vw);
     max-height: 92vh;
     overflow-y: auto;
-    padding: 36px 36px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 66px 46px 40px;
     background: rgba(6,9,26,0.72);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 14px;
     box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+}
+/* Keep the close button inside the popup so overflow doesn't clip it */
+#sbiaClose {
+    top: 16px;
+    right: 16px;
 }
 .sbia-header { text-align: center; margin-bottom: 24px; }
 .sbia-title {
@@ -1070,10 +1091,13 @@ html, body {
 .sbia-video {
     width: 100%;
     aspect-ratio: 16 / 9;
+    max-height: min(64vh, 520px);
+    object-fit: contain;
     background: #000;
+    border: 2px solid rgba(255,255,255,0.32);
     border-radius: 10px;
     display: block;
-    box-shadow: 0 20px 56px rgba(0,0,0,0.6);
+    box-shadow: 0 20px 56px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,160,220,0.28);
     outline: none;
 }
 .wb-video-cell figcaption {
